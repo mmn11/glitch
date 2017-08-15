@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Financial News Add A Review</title>
+</head>
+<body>
+  <p>
+ <%= articles[0].source %> 
+  </p>
+  <h1>
+Add New Review
+  </h1>
+  <% 
+  
+  
+  %>
+
+  <ul class="articles">
+  <% for(var i=0; i<1; i++) {%>
+    <li class="quote">
+      <span><%= articles[i].urlName %></span>
+
+    </li>
+
+<% } %>
+</ul>
+  
+ <% var title= articles[0].title %>
+  <p><%= title %></p>
+  <p><%= articles[0].author %></p>
+  <p><%= articles[0].source %></p>
+  <p><%= articles[0].urlName %></p>
+  <p>
+    <%= articles[0].dateStamp %>
+  </p>
+  
+// add some inputs maybe category 
+  <div>
+    
+
+   <form action="/url" method="POST">
+    <label for="articleDate">Article Date</label>
+    <input id="articleDate" type="date" name="articleDate" value="<%= articles[0].dateStamp %>">
+    <label for="articleTitle">Article Title</label>
+    <input id="articleTitle type="text" value="<%= title %>" name="articleTitle" size=<%= articles[0].title.length %>> 
+    <label for="articleAuthor">Article Author</label>
+    <input id="articleAuthor" type="text" value="<%= articles[0].author %>" name="articleAuthor" size=<%= articles[0].author.length %>>
+    <label for="articleSource">Article Source</label>
+    <input id="articleSource" type="text" value="<%= articles[0].source %>" name="articleSource" size=<%= articles[0].source.length %>> 
+    <label for="articleURL">Article URL</label>
+    <input id="articleURL" type="url" value="<%= articles[0].urlName %>" name="urlName" size=<%= articles[0].urlName.length %>>
+    <label for="articleRating">Article Rating</label>
+    <input id="articleRating" type="number" placeholder="rating 0-10" name="rating" min="1" max="10">
+    <label for="reviewTitle">Review Title</label>
+    <input id="articleReview" type="text" placeholder="review title" name="articleTitle"> 
+    <label for="articleReview">Review</label>
+    <textarea id="articleReview" name="message" rows="10" cols="30" placeholder="Your review"></textarea>
+    <button type="submit">Submit</button>
+  </form> 
+  </div>
+</body>
+</html>
